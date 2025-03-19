@@ -1,0 +1,35 @@
+{
+  "name": "videoverse",
+  "version": "1.0.0",
+  "description": "The backend implementation for a video sharing platform like youtube",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhaxkar/VideoVerse.git"
+  },
+  "keywords": [
+    "VideoVerse"
+  ],
+  "author": "Bhaskar Jha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhaxkar/VideoVerse/issues"
+  },
+  "homepage": "https://github.com/bhaxkar/VideoVerse#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.3"
+  }
+}
