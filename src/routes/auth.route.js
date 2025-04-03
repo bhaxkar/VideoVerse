@@ -4,6 +4,7 @@ import {
   login,
   logout,
   refreshAccessToken,
+  getCurrentUser,
 } from "../controllers/auth.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
 import authenticateJWT from "../middlewares/auth.middleware.js";
@@ -35,5 +36,6 @@ router.route("/signup").post(
 router.route("/login").post(login);
 router.route("/logout").post(authenticateJWT, logout);
 router.route("/refresh-token").post(refreshAccessToken);
+router.route("/me").get(authenticateJWT, getCurrentUser);
 
 export default router;

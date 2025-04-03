@@ -3,7 +3,7 @@ import asyncHandler from "../utils/asyncHandler.js";
 import ApiError from "../utils/ApiError.js";
 import { User } from "../models/user.model.js";
 
-const authenticateJWT = asyncHandler((req, res, next) => {
+const authenticateJWT = asyncHandler(async (req, res, next) => {
   try {
     const token =
       req?.cookies?.accessToken ||
@@ -11,11 +11,15 @@ const authenticateJWT = asyncHandler((req, res, next) => {
     if (!token) {
       throw new ApiError(401, "Unauthorized requeset");
     }
+
     const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-    const user = User.findById(decoded._id).select("-password -refreshToken");
+    const user = await User.findById(decoded._id).select(
+      "-password -refreshToken"
+    );
     if (!user) {
       throw new ApiError(403, "Invalid Access Token");
     }
+    
     req.user = user;
     next();
   } catch (error) {
