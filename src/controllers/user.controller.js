@@ -1,4 +1,4 @@
-import asyncHandler from "../utils/asyncHandler";
+import asyncHandler from "../utils/asyncHandler.js";
 
 export const getCurrentUser = asyncHandler( async(req, res) => {
 

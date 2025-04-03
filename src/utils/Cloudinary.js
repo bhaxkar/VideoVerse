@@ -19,7 +19,7 @@ const uploadOnCloudinary = async (localFilePath) => {
     fs.unlinkSync(localFilePath); // unlink or remove the locally saved file synchronously after succesfull upload
     return response;
   } catch (error) {
-    fs.unlinkSync(localFilePath); // unlink or remove the locally saved file as upload on cloudinary fails 
+    fs.unlinkSync(localFilePath); // unlink or remove the locally saved file synchronously as upload on cloudinary fails 
     return null;
   }
 };

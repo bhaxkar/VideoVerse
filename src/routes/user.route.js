@@ -1,5 +1,5 @@
 import { Router } from "express";
-import authenticateJWT from "../middlewares/auth.middleware";
+import authenticateJWT from "../middlewares/auth.middleware.js";
 import { getCurrentUser, changeCurrentPassword, updateAccountDetails, updateAvatar, updateCoverImage, getUserChannelDetails, getWatchHistory} from "../controllers/user.controller.js"
 
 const router = Router();
